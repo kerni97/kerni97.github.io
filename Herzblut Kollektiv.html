@@ -1,0 +1,169 @@
+<!Doctype html>
+
+<html>
+
+<head>
+
+	<title> Herzblut Kollektiv – KerniiTV_97 </title>
+	<link rel="stylesheet" href="style.css" >
+
+</head>
+
+
+
+<body> 
+
+	<nav>
+
+		<a href="index.html"> Willkommen </a>
+		<a href="streamen.html"> Streamen </a>
+		<a href="Herzblut Kollektiv.html"> Herzblut Kollektiv </a>
+		<a href="diamond.html"> Diamond Painting </a>
+		<a href="epoxid.html"> Epoxidharz Gießen </a>
+		
+
+	</nav>
+	
+	<h1> Hier werde ich Werbung machen für Streamer die ich unterstütze </h1>
+	
+	<div class="card-grid">
+	
+			<div class="card">
+				<h2> Was ist Herzblut_Kollektiv ? </h2>
+					
+				<p> Herzblut Kollektiv ist eine kleine gruppe die Streamer unterstützen bzw gegenseitig unterstützen </p>
+			</div>
+	</div>
+	
+	<div class="streamer-grid">
+		
+		<div class="streamer-card" id="karte-kerniitv_97">
+			<span class="badge-twitch" id="badge-kerniitv_97">🟣 Twitch </span>
+			<div class="avatar"> KTV </div>
+			<h3> KerniiTV_97 </h3>
+			<p> 🎮 Simulationen, Action & Kreatives </p>
+			<a href="https://twitch.tv/KerniiTV_97"> Zum Kanal </a>
+		</div>
+		
+		<div class="streamer-card">
+			<span class="badge-twitch" id="badge-Marco_BTL_Berlin">🟣 Twitch </span>
+			<div class="avatar"> MBB </div>
+			<h3> Marco_BTL_Berlin </h3>
+			<p> 🎮 Simulationen und IRL Streams </p>
+			<a href="https://twitch.tv/Marco_BTL_Berlin"> Zum Kanal </a>
+		</div>
+		
+		<div class="streamer-card">
+			<span class="badge-twitch" id="badge-xstefanox87">🟣 Twitch </span>
+			<div class="avatar"> xf87 </div>
+			<h3> xstefanox87 </h3>
+			<p> 🎮 Simulationen </p>
+			<a href="https://www.twitch.tv/xstefanox87"> Zum Kanal </a>
+		</div>		
+		
+		<div class="streamer-card">
+			<span class="badge-twitch" id="badge-tierheimtiereev">🟣 Twitch </span>
+			<div class="avatar"> ttev </div>
+			<h3> tierheimtiereev </h3>
+			<p> IRL Streams </p>
+			<a href="https://www.twitch.tv/tierheimtiereev"> Zum Kanal </a>
+		</div>
+	</div>
+	
+	<script> 
+		function checkLive(kerniitv_97) {
+			fetch("https://decapi.me/twitch/uptime/" + kerniitv_97)
+			.then(response => response.text())
+			.then(daten => {
+				let karte = document.getElementById("karte-" + kerniitv_97);
+				let badge = document.getElementById("badge-" + kerniitv_97);
+				
+				if (daten.includes("offline")) {
+				//offline
+				karte.classList.remove("live");
+				badge.classList.remove("live");
+				badge.innerText = "🟣 Twitch";
+			} else {
+				//LIVE!
+				karte.classList.add("live");
+				badge.classList.add("live");
+				badge.innerText = "🔴 LIVE";
+				}
+			});
+		}		
+		
+		function checkLive(Marco_BTL_Berlin) {
+			fetch("https://decapi.me/twitch/uptime/" + Marco_BTL_Berlin)
+			.then(response => response.text())
+			.then(daten => {
+				let karte = document.getElementById("karte-" + Marco_BTL_Berlin);
+				let badge = document.getElementById("badge-" + Marco_BTL_Berlin);
+				
+				if (daten.includes("offline")) {
+				//offline
+				karte.classList.remove("live");
+				badge.classList.remove("live");
+				badge.innerText = "🟣 Twitch";
+			} else {
+				//LIVE!
+				karte.classList.add("live");
+				badge.classList.add("live");
+				badge.innerText = "🔴 LIVE";
+				}
+			});
+		}		
+		
+		function checkLive(xstefanox87) {
+			fetch("https://decapi.me/twitch/uptime/" + xstefanox87)
+			.then(response => response.text())
+			.then(daten => {
+				let karte = document.getElementById("karte-" + xstefanox87);
+				let badge = document.getElementById("badge-" + xstefanox87);
+				
+				if (daten.includes("offline")) {
+				//offline
+				karte.classList.remove("live");
+				badge.classList.remove("live");
+				badge.innerText = "🟣 Twitch";
+			} else {
+				//LIVE!
+				karte.classList.add("live");
+				badge.classList.add("live");
+				badge.innerText = "🔴 LIVE";
+				}
+			});		
+			
+			function checkLive(tierheimtiereev) {
+			fetch("https://decapi.me/twitch/uptime/" + tierheimtiereev)
+			.then(response => response.text())
+			.then(daten => {
+				let karte = document.getElementById("karte-" + tierheimtiereev);
+				let badge = document.getElementById("badge-" + tierheimtiereev);
+				
+				if (daten.includes("offline")) {
+				//offline
+				karte.classList.remove("live");
+				badge.classList.remove("live");
+				badge.innerText = "🟣 Twitch";
+			} else {
+				//LIVE!
+				karte.classList.add("live");
+				badge.classList.add("live");
+				badge.innerText = "🔴 LIVE";
+				}
+			});
+		}
+		
+		checkLive("kerniitv_97");
+		checkLive("Marco_BTL_Berlin");
+		checkLive("xstefanox87");
+		checkLive("tierheimtiereev");
+		
+	</script>
+				
+	
+	
+	
+</body>
+
+</html>
